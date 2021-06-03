@@ -1,0 +1,5 @@
+c)
+
+Recursion in makros will not work, because it would replace a function call (FAC for instance) with its body, in which the same function would be called again, but is still not defined.
+
+If the prepocessor will go over the text only once, there will be a null pointer exception caused by the undefinend function call. Otherwise, the prepocessor would not terminate, because it does not perform any checks to break the recursion.
